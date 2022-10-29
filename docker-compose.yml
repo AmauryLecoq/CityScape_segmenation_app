@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  backend:
+    platform: linux/amd64  
+    build: backend
+    image: segapp001.azurecr.io/backend
+    container_name: fastapi
+    environment:
+      ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - 8000:8000
+    deploy:
+      resources:
+          reservations:
+            cpus: '2'
+            memory: 1.5G
+    #        gpu:
+    #         count: 1
+    #          sku: K80
+
+  frontend:
+    platform: linux/amd64
+    build: ./frontend
+    image: segapp001.azurecr.io/frontend 
+    container_name: streamlit
+    environment:
+      BACKEND: backend  
+    ports:
+        - 80:80
