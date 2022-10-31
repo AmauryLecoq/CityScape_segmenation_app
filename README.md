@@ -1,3 +1,6 @@
-Application City_segmentation
-Téléchargement des fichiers sur app streamlit
-Prédiction sur application FastAPI en backend
+__Application City_segmentation__
+
+Fonctionnement:
+
+- Téléchargement des fichiers sur app streamlit en Front end
+- Prédiction sur application FastAPI en backend
